@@ -1,0 +1,156 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid hsl(240, 5%, 91%);
+  margin: 16px 0;
+}
+
+h1 {
+  margin: 16px 0 32px;
+  color: hsl(238, 29%, 16%);
+}
+
+.container {
+  display: table;
+  border-radius: 25px;
+  background-color: #fff;
+  height: 60%;
+  width: 60%;
+}
+
+.FAQ-container {
+  font-family: 'Kumbh Sans', sans-serif;
+  padding: 48px 80px 48px 40px;
+}
+
+.accordian-header {
+  cursor: pointer;
+  position: relative;
+  color: hsl(237, 12%, 33%);
+  font-size: 12.8px;
+  margin: 16px 0;
+  padding-right: 48px;
+}
+
+.accordian-header.active {
+  font-weight: bold;
+  font-size: 12.8px;
+  color: hsl(238, 29%, 16%);
+}
+
+.accordian-header:hover {
+  color: hsl(14, 88%, 65%);
+  font-size: 12.8px;
+  font-weight: bold;
+}
+
+.accordian-header::after {
+  content: url("images/icon-arrow-down.svg");
+  position: absolute;
+  right: 16px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.accordian-header.active::after {
+  transform: rotate(180deg);
+}
+
+.accordian-body {
+  display: none;
+  color: hsl(240, 6%, 50%);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.accordian-header.active + .accordian-body {
+  display: block;
+}
+
+.image-container {
+  display: table-cell;
+
+  overflow: hidden;
+}
+
+.desktop-woman-image {
+  margin-right: 32px;
+  padding: 64px 0;
+  position: relative;
+  background-image: url("images/bg-pattern-desktop.svg");
+  background-repeat: no-repeat;
+      background-position: right bottom -164px;
+  right: 80px;
+}
+
+.desktop-box-image {
+  position: absolute;
+  z-index: 1;
+  left: 214.4px;
+  top: 320px;
+}
+
+.float-child {
+  float: left;
+  height: 100%;
+  width: 50%;
+}
+
+@media only screen and (min-width : 1300px) {
+  .woman-online{
+    display: none;
+  }
+}
+
+@media only screen and (max-width : 1300px) {
+  h1 {
+    text-align: center;
+  }
+
+  .image-container, .desktop-box-image {
+    display: none;
+  }
+
+
+  .container {
+    margin-top: 6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    width: 80%;
+    height: 80%;
+  }
+
+  .woman-online {
+    padding-bottom: 12px;
+    position: relative;
+    right: 18px;
+    bottom: 108px;
+    background-image: url("images/bg-pattern-mobile.svg");
+    background-repeat: no-repeat;
+    background-position: bottom right;
+  }
+
+  .FAQ-container {
+
+    position: relative;
+    bottom: 72px;
+    text-align: left;
+    width: 100%;
+    padding: 0 2rem ;
+  }
+}
